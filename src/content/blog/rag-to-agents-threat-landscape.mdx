@@ -1,0 +1,76 @@
+---
+title: "Securing RAG to Autonomous Agents — The 2026+ Threat Landscape"
+date: "2026-02-15"
+excerpt: "A deep look at the real threats facing RAG pipelines and autonomous AI agents in 2026 and beyond — from retrieval poisoning and prompt injection to goal drift and unsupervised tool use."
+author: "Ahmed Amhdour"
+tags: ["RAG Security", "Agent Safety", "Threat Landscape"]
+---
+
+The AI systems shipping in 2026 are fundamentally different from what came before. We have moved from simple chatbots to retrieval-augmented generation pipelines that pull from live data, and from there to autonomous agents that make decisions, call tools, and take actions in the real world.
+
+The threat landscape has evolved to match.
+
+## RAG Pipeline Threats
+
+Retrieval-Augmented Generation changed the game by grounding LLM outputs in external data. But it also introduced a new attack surface that most teams have not mapped.
+
+### Document Poisoning
+
+If an attacker can inject or modify documents in your knowledge base, they control what the LLM retrieves and generates. This is not theoretical — any system that ingests external documents, user uploads, or web-scraped content is exposed.
+
+**What to look for:**
+- Documents with embedded prompt injection payloads
+- Manipulated metadata that inflates retrieval relevance scores
+- Gradual content drift that shifts system behavior over time
+
+### Retrieval Manipulation
+
+Even without poisoning the source documents, attackers can exploit how retrieval works:
+
+- **Embedding collision attacks** — Crafting inputs that retrieve unrelated but attacker-chosen content
+- **Context window stuffing** — Flooding retrieval with low-relevance documents to dilute useful context
+- **Source confusion** — Mixing trusted and untrusted sources without clear provenance tracking
+
+### Context Injection
+
+The boundary between retrieved context and user input is one of the weakest points in most RAG systems. If the LLM cannot distinguish between "instructions from the system" and "content from retrieved documents," an attacker who controls the documents controls the system.
+
+## Autonomous Agent Threats
+
+Autonomous agents introduce risks that RAG systems never had, because agents act on the world rather than just generating text.
+
+### Tool-Use Exploitation
+
+Agents that can call APIs, execute code, read files, or interact with databases create a fundamentally different risk profile:
+
+- **Permission escalation** — An agent using a tool in ways the developer did not anticipate
+- **Chained tool abuse** — Combining multiple low-risk tools to achieve a high-risk outcome
+- **Side-channel data exfiltration** — Using tool calls to leak information to external systems
+
+### Goal Drift
+
+Long-running agents can drift from their original objective, especially in multi-step tasks:
+
+- **Reward hacking** — Optimizing for a proxy metric instead of the intended goal
+- **Objective misalignment** — Subtle shifts in behavior as the agent encounters edge cases
+- **Feedback loop amplification** — Small errors compounding over sequential decisions
+
+### Unsupervised Decision Loops
+
+The most dangerous pattern in agentic AI is an agent making consequential decisions without human checkpoints:
+
+- Financial transactions without approval gates
+- Content publication without review steps
+- System configuration changes without rollback safeguards
+
+## What Readiness Looks Like
+
+Securing these systems is not about adding a single filter or running one penetration test. It requires a layered approach:
+
+1. **Map the trust surface** — Know every point where data enters, decisions are made, and actions are taken
+2. **Install guardrails at every boundary** — Input validation, retrieval filtering, output checking, and action gating
+3. **Test adversarially** — Not just happy-path testing, but deliberate attempts to break, manipulate, and exploit the system
+4. **Monitor continuously** — Runtime telemetry that catches anomalies in production, not just in testing
+5. **Require evidence before deployment** — No system goes live without documented proof of readiness
+
+This is the work of AI Trust & Security Readiness. And in 2026, it is no longer optional.

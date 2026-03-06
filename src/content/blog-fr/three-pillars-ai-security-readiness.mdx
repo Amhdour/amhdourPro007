@@ -1,0 +1,64 @@
+---
+title: "Layer Retrofit, Secure Starter Kit & Launch Gate — Les trois piliers de la préparation sécuritaire de l'IA"
+date: "2026-01-20"
+excerpt: "Une analyse pratique des trois spécialisations que tout ingénieur en confiance et sécurité IA devrait maîtriser : Layer Retrofit pour les systèmes existants, Secure Starter Kit pour les nouvelles constructions, et Launch Gate pour l'autorisation de mise en production."
+author: "Ahmed Amhdour"
+tags: ["AI Security", "RAG Security", "Compliance"]
+---
+
+La plupart des systèmes d'IA déployés aujourd'hui ont été construits sans penser à la sécurité. Les pipelines RAG sont assemblés sous la pression des délais. Les agents autonomes obtiennent l'accès aux outils sans frontières de confiance. Et tout passe en production avec une prière plutôt qu'une preuve.
+
+C'est exactement le vide que la préparation sécuritaire de l'IA existe pour combler. Et cela repose sur trois piliers.
+
+## Layer Retrofit — La sécurité après coup
+
+Toutes les équipes n'ont pas le luxe de repartir de zéro. La plupart des systèmes d'IA en production fonctionnent déjà, servent déjà des utilisateurs, et portent déjà des risques que personne n'a cartographiés.
+
+Layer Retrofit est la pratique d'injecter des couches de sécurité dans les systèmes existants sans nécessiter une reconstruction complète :
+
+- **Garde-fous d'entrée** — Filtres d'injection de prompts, classificateurs de contenu et assainissement des entrées ajoutés à la frontière de l'API
+- **Validation de la récupération** — Score de confiance sur les documents récupérés, seuils de pertinence et vérification des sources insérés entre le magasin de vecteurs et le LLM
+- **Surveillance des sorties** — Vérifications en temps réel des marqueurs d'hallucination, des modèles de fuite de données et des violations de politique avant que les réponses n'atteignent les utilisateurs
+- **Télémétrie d'exécution** — Journalisation structurée de chaque récupération, génération et appel d'outil pour l'analyse post-incident
+
+L'insight clé : vous n'avez pas besoin de reconstruire le système. Vous devez savoir où les frontières de confiance auraient dû être — et les installer.
+
+## Secure Starter Kit — La sécurité dès le premier jour
+
+Pour les équipes qui construisent de nouveaux systèmes RAG ou d'agents autonomes, l'opportunité est de bien faire les choses dès le départ.
+
+Un Secure Starter Kit est un modèle de projet pré-sécurisé qui inclut :
+
+- **Des couches de défense contre l'injection de prompts** intégrées dans le pipeline de requêtes
+- **Le sandboxing de récupération** qui isole les sources de documents et empêche la contamination croisée
+- **Des chaînes de validation des sorties** qui détectent les hallucinations, le contenu toxique et les violations de politique avant qu'ils n'atteignent les utilisateurs
+- **L'accès aux outils basé sur les rôles** pour les agents, afin qu'aucun composant n'ait des capacités illimitées
+- **La journalisation structurée et les pistes d'audit** pour chaque décision prise par le système
+
+L'objectif n'est pas de ralentir les équipes. L'objectif est d'éliminer la dette de sécurité qui s'accumule quand les équipes livrent vite et prévoient d'« ajouter la sécurité plus tard ». Plus tard n'arrive jamais.
+
+## Launch Gate — Pas de preuve, pas de lancement
+
+Le dernier pilier est le point de contrôle entre le développement et la production.
+
+Launch Gate est un processus structuré de go/no-go que chaque déploiement d'IA doit franchir avant d'atteindre les vrais utilisateurs :
+
+1. **Sondes adversariales** — Tests systématiques d'injection de prompts, de jailbreak et de manipulation
+2. **Validation des frontières de confiance** — Vérification que chaque composant respecte ses frontières définies
+3. **Tests de stress d'hallucination** — Entrées de cas limites conçues pour déclencher la confabulation et mesurer la fiabilité des sorties
+4. **Vérifications de fuite de données** — Sondes pour l'extraction de données d'entraînement, l'exposition de données personnelles et les fuites de fenêtre de contexte
+5. **Vérification de conformité** — Alignement avec le EU AI Act, le NIST AI RMF ou les politiques organisationnelles
+
+Le principe est simple : si vous ne pouvez pas produire de preuve que le système est prêt, il ne se lance pas.
+
+## Pourquoi ces trois ensemble
+
+Chaque pilier couvre une étape différente du cycle de vie de l'IA :
+
+- **Layer Retrofit** gère les systèmes déjà en circulation
+- **Secure Starter Kit** gère les systèmes en cours de construction
+- **Launch Gate** gère le moment critique entre le développement et le déploiement
+
+Ensemble, ils forment une pratique complète — une qui peut servir n'importe quelle équipe, à n'importe quelle étape, déployant n'importe quel type de système d'IA, des RAG aux agents entièrement autonomes.
+
+C'est le chemin que je construis. Non pas comme théorie, mais comme pratique de travail.

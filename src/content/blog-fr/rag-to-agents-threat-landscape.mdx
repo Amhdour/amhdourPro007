@@ -1,0 +1,76 @@
+---
+title: "Sécuriser les RAG aux agents autonomes — Le paysage des menaces 2026+"
+date: "2026-02-15"
+excerpt: "Un regard approfondi sur les vraies menaces auxquelles font face les pipelines RAG et les agents IA autonomes en 2026 et au-delà — de l'empoisonnement de récupération et l'injection de prompts à la dérive des objectifs et l'utilisation non supervisée des outils."
+author: "Ahmed Amhdour"
+tags: ["RAG Security", "Agent Safety", "Threat Landscape"]
+---
+
+Les systèmes d'IA déployés en 2026 sont fondamentalement différents de ce qui existait avant. Nous sommes passés de simples chatbots à des pipelines de génération augmentée par récupération qui puisent dans des données en direct, et de là à des agents autonomes qui prennent des décisions, appellent des outils et agissent dans le monde réel.
+
+Le paysage des menaces a évolué en conséquence.
+
+## Menaces des pipelines RAG
+
+La génération augmentée par récupération a changé la donne en ancrant les sorties LLM dans des données externes. Mais elle a aussi introduit une nouvelle surface d'attaque que la plupart des équipes n'ont pas cartographiée.
+
+### Empoisonnement de documents
+
+Si un attaquant peut injecter ou modifier des documents dans votre base de connaissances, il contrôle ce que le LLM récupère et génère. Ce n'est pas théorique — tout système qui ingère des documents externes, des téléchargements d'utilisateurs ou du contenu web scrapé est exposé.
+
+**Ce qu'il faut surveiller :**
+- Des documents avec des charges utiles d'injection de prompts intégrées
+- Des métadonnées manipulées qui gonflent les scores de pertinence de récupération
+- Une dérive graduelle du contenu qui modifie le comportement du système au fil du temps
+
+### Manipulation de la récupération
+
+Même sans empoisonner les documents sources, les attaquants peuvent exploiter le fonctionnement de la récupération :
+
+- **Attaques par collision d'embeddings** — Fabrication d'entrées qui récupèrent du contenu sans rapport mais choisi par l'attaquant
+- **Saturation de la fenêtre de contexte** — Inondation de la récupération avec des documents de faible pertinence pour diluer le contexte utile
+- **Confusion des sources** — Mélange de sources fiables et non fiables sans suivi clair de la provenance
+
+### Injection de contexte
+
+La frontière entre le contexte récupéré et l'entrée utilisateur est l'un des points les plus faibles de la plupart des systèmes RAG. Si le LLM ne peut pas distinguer entre « les instructions du système » et « le contenu des documents récupérés », un attaquant qui contrôle les documents contrôle le système.
+
+## Menaces des agents autonomes
+
+Les agents autonomes introduisent des risques que les systèmes RAG n'avaient jamais, car les agents agissent sur le monde plutôt que de simplement générer du texte.
+
+### Exploitation de l'utilisation des outils
+
+Les agents qui peuvent appeler des API, exécuter du code, lire des fichiers ou interagir avec des bases de données créent un profil de risque fondamentalement différent :
+
+- **Escalade de permissions** — Un agent utilisant un outil de manières que le développeur n'avait pas anticipées
+- **Abus d'outils en chaîne** — Combinaison de plusieurs outils à faible risque pour atteindre un résultat à haut risque
+- **Exfiltration de données par canal latéral** — Utilisation d'appels d'outils pour divulguer des informations vers des systèmes externes
+
+### Dérive des objectifs
+
+Les agents à longue durée d'exécution peuvent dériver de leur objectif initial, surtout dans les tâches à étapes multiples :
+
+- **Piratage de récompense** — Optimisation pour une métrique proxy au lieu de l'objectif prévu
+- **Désalignement des objectifs** — Changements subtils de comportement lorsque l'agent rencontre des cas limites
+- **Amplification par boucle de rétroaction** — Petites erreurs qui se composent au fil des décisions séquentielles
+
+### Boucles de décision non supervisées
+
+Le schéma le plus dangereux dans l'IA agentique est un agent qui prend des décisions conséquentes sans points de contrôle humains :
+
+- Transactions financières sans portes d'approbation
+- Publication de contenu sans étapes de révision
+- Modifications de configuration système sans mesures de rollback
+
+## À quoi ressemble la préparation
+
+Sécuriser ces systèmes ne consiste pas à ajouter un seul filtre ou à exécuter un test d'intrusion. Cela nécessite une approche en couches :
+
+1. **Cartographier la surface de confiance** — Connaître chaque point où les données entrent, où les décisions sont prises et où les actions sont exécutées
+2. **Installer des garde-fous à chaque frontière** — Validation des entrées, filtrage de la récupération, vérification des sorties et contrôle des actions
+3. **Tester de manière adversariale** — Pas seulement des tests de chemin heureux, mais des tentatives délibérées de casser, manipuler et exploiter le système
+4. **Surveiller en continu** — Télémétrie d'exécution qui détecte les anomalies en production, pas seulement en test
+5. **Exiger des preuves avant le déploiement** — Aucun système ne passe en production sans preuve documentée de sa préparation
+
+C'est le travail de la confiance et de la préparation sécuritaire de l'IA. Et en 2026, ce n'est plus optionnel.

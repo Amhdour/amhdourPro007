@@ -1,0 +1,76 @@
+---
+title: "RAG bis autonome Agenten absichern — Die Bedrohungslandschaft 2026+"
+date: "2026-02-15"
+excerpt: "Ein tiefer Blick auf die realen Bedrohungen für RAG-Pipelines und autonome KI-Agenten in 2026 und darüber hinaus — von Retrieval-Vergiftung und Prompt-Injection bis zu Zieldrift und unüberwachter Werkzeugnutzung."
+author: "Ahmed Amhdour"
+tags: ["RAG Security", "Agent Safety", "Threat Landscape"]
+---
+
+Die KI-Systeme, die 2026 ausgeliefert werden, unterscheiden sich grundlegend von dem, was zuvor kam. Wir sind von einfachen Chatbots zu Retrieval-Augmented-Generation-Pipelines übergegangen, die auf Live-Daten zugreifen, und von dort zu autonomen Agenten, die Entscheidungen treffen, Werkzeuge aufrufen und in der realen Welt handeln.
+
+Die Bedrohungslandschaft hat sich entsprechend entwickelt.
+
+## Bedrohungen für RAG-Pipelines
+
+Retrieval-Augmented Generation hat das Spiel verändert, indem LLM-Ausgaben in externen Daten verankert werden. Aber es hat auch eine neue Angriffsfläche eingeführt, die die meisten Teams nicht kartiert haben.
+
+### Dokumentenvergiftung
+
+Wenn ein Angreifer Dokumente in Ihrer Wissensbasis injizieren oder modifizieren kann, kontrolliert er, was das LLM abruft und generiert. Das ist nicht theoretisch — jedes System, das externe Dokumente, Benutzer-Uploads oder web-gescrapte Inhalte aufnimmt, ist exponiert.
+
+**Worauf Sie achten sollten:**
+- Dokumente mit eingebetteten Prompt-Injection-Payloads
+- Manipulierte Metadaten, die Retrieval-Relevanzwerte aufblähen
+- Allmähliche Inhaltsdrift, die das Systemverhalten über die Zeit verändert
+
+### Retrieval-Manipulation
+
+Selbst ohne die Quelldokumente zu vergiften, können Angreifer die Funktionsweise des Retrievals ausnutzen:
+
+- **Embedding-Kollisionsangriffe** — Erstellung von Eingaben, die nicht verwandte, aber vom Angreifer gewählte Inhalte abrufen
+- **Kontextfenster-Überflutung** — Überflutung des Retrievals mit Dokumenten geringer Relevanz, um nützlichen Kontext zu verwässern
+- **Quellenverwirrung** — Vermischung vertrauenswürdiger und nicht vertrauenswürdiger Quellen ohne klare Herkunftsverfolgung
+
+### Kontextinjektion
+
+Die Grenze zwischen abgerufenem Kontext und Benutzereingabe ist einer der schwächsten Punkte in den meisten RAG-Systemen. Wenn das LLM nicht zwischen „Anweisungen vom System" und „Inhalten aus abgerufenen Dokumenten" unterscheiden kann, kontrolliert ein Angreifer, der die Dokumente kontrolliert, das System.
+
+## Bedrohungen durch autonome Agenten
+
+Autonome Agenten führen Risiken ein, die RAG-Systeme nie hatten, weil Agenten auf die Welt einwirken, anstatt nur Text zu generieren.
+
+### Ausnutzung der Werkzeugnutzung
+
+Agenten, die APIs aufrufen, Code ausführen, Dateien lesen oder mit Datenbanken interagieren können, schaffen ein grundlegend anderes Risikoprofil:
+
+- **Berechtigungseskalation** — Ein Agent, der ein Werkzeug auf Weisen nutzt, die der Entwickler nicht vorhergesehen hat
+- **Verketteter Werkzeugmissbrauch** — Kombination mehrerer risikoarmer Werkzeuge, um ein risikohohes Ergebnis zu erzielen
+- **Seitenkanal-Datenexfiltration** — Nutzung von Werkzeugaufrufen, um Informationen an externe Systeme zu leaken
+
+### Zieldrift
+
+Langlebige Agenten können von ihrem ursprünglichen Ziel abdriften, besonders bei mehrstufigen Aufgaben:
+
+- **Reward-Hacking** — Optimierung für eine Proxy-Metrik statt des beabsichtigten Ziels
+- **Zielmisalignment** — Subtile Verhaltensänderungen, wenn der Agent auf Grenzfälle trifft
+- **Rückkopplungsschleifen-Verstärkung** — Kleine Fehler, die sich über sequenzielle Entscheidungen aufschaukeln
+
+### Unüberwachte Entscheidungsschleifen
+
+Das gefährlichste Muster in agentischer KI ist ein Agent, der folgenreiche Entscheidungen ohne menschliche Kontrollpunkte trifft:
+
+- Finanztransaktionen ohne Genehmigungsschranken
+- Inhaltsveröffentlichung ohne Überprüfungsschritte
+- Systemkonfigurationsänderungen ohne Rollback-Sicherungen
+
+## Wie Bereitschaft aussieht
+
+Diese Systeme abzusichern bedeutet nicht, einen einzelnen Filter hinzuzufügen oder einen Penetrationstest durchzuführen. Es erfordert einen mehrschichtigen Ansatz:
+
+1. **Die Vertrauensoberfläche kartieren** — Jeden Punkt kennen, an dem Daten eintreten, Entscheidungen getroffen und Aktionen ausgeführt werden
+2. **Schutzmaßnahmen an jeder Grenze installieren** — Eingabevalidierung, Retrieval-Filterung, Ausgabeprüfung und Aktionskontrolle
+3. **Adversarial testen** — Nicht nur Happy-Path-Tests, sondern gezielte Versuche, das System zu brechen, zu manipulieren und auszunutzen
+4. **Kontinuierlich überwachen** — Laufzeittelemetrie, die Anomalien in der Produktion erkennt, nicht nur im Test
+5. **Nachweise vor dem Deployment verlangen** — Kein System geht ohne dokumentierten Bereitschaftsnachweis live
+
+Das ist die Arbeit der KI-Vertrauens- und Sicherheitsbereitschaft. Und 2026 ist sie nicht mehr optional.

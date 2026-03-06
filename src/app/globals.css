@@ -1,0 +1,318 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/Poppins-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Poppins-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Poppins-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Poppins-ExtraBold.woff2") format("woff2");
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-site-primary: var(--site-primary);
+  --color-site-primary-light: var(--site-primary-light);
+  --color-site-text: var(--site-text);
+  --color-site-muted: var(--site-muted);
+  --color-site-bg: var(--site-bg);
+  --color-site-section: var(--site-section);
+  --color-site-block: var(--site-block);
+}
+
+:root {
+  --radius: 0.625rem;
+  --site-primary: #1770b5;
+  --site-primary-light: #62a3ed;
+  --site-text: #2d2e32;
+  --site-muted: #a0acbd;
+  --site-bg: #ffffff;
+  --site-section: #f9f9f9;
+  --site-block: #ffffff;
+  --background: #ffffff;
+  --foreground: #2d2e32;
+  --card: #ffffff;
+  --card-foreground: #2d2e32;
+  --popover: #ffffff;
+  --popover-foreground: #2d2e32;
+  --primary: #1770b5;
+  --primary-foreground: #ffffff;
+  --secondary: #f9f9f9;
+  --secondary-foreground: #2d2e32;
+  --muted: #f9f9f9;
+  --muted-foreground: #a0acbd;
+  --accent: #f9f9f9;
+  --accent-foreground: #2d2e32;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #1770b5;
+  --input: #e5e7eb;
+  --ring: #1770b5;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2d2e32;
+  --sidebar-primary: #1770b5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f9f9f9;
+  --sidebar-accent-foreground: #2d2e32;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #1770b5;
+}
+
+.dark {
+  --site-primary: #38bdf8;
+  --site-primary-light: #7dd3fc;
+  --site-text: #e2e8f0;
+  --site-muted: #94a3b8;
+  --site-bg: #0f172a;
+  --site-section: #1e293b;
+  --site-block: #1e293b;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
+  --primary: #38bdf8;
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #e2e8f0;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #38bdf8;
+  --input: #334155;
+  --ring: #38bdf8;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #334155;
+  --sidebar-ring: #38bdf8;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 9999px;
+}
+
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-track {
+  background-color: var(--site-bg);
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--site-primary);
+  border-radius: 9999px;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+#selfie.morph-image {
+  animation: morph 8s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  border: 3px solid var(--site-primary);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  width: 300px;
+  height: 400px;
+  background-image: url("/images/selfie.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+
+.collapsible-container {
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-bar {
+  transition: width 1s ease-in-out;
+}
+
+[dir="rtl"] .list-disc {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+[dir="rtl"] .portfolio-card .absolute.bottom-0.left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .skill-bar {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .prose {
+  direction: rtl;
+  text-align: right;
+}
+
+@keyframes hero-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-fade-up 0.8s ease-out forwards;
+}
+
+.hero-animate-fade {
+  opacity: 0;
+  animation: hero-fade-in 1s ease-out forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.5s;
+}
+
+.hero-delay-4 {
+  animation-delay: 0.4s;
+}

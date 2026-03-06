@@ -1,0 +1,64 @@
+---
+title: "Layer Retrofit, Secure Starter Kit & Launch Gate — Die drei Säulen der KI-Sicherheitsbereitschaft"
+date: "2026-01-20"
+excerpt: "Eine praktische Aufschlüsselung der drei Spezialisierungen, die jeder KI-Vertrauens- und Sicherheitsingenieur beherrschen sollte: Layer Retrofit für bestehende Systeme, Secure Starter Kit für Neubauten und Launch Gate für die Produktionsfreigabe."
+author: "Ahmed Amhdour"
+tags: ["AI Security", "RAG Security", "Compliance"]
+---
+
+Die meisten KI-Systeme, die heute ausgeliefert werden, wurden ohne Sicherheit im Sinn gebaut. RAG-Pipelines werden unter Termindruck zusammengeschraubt. Autonome Agenten erhalten Werkzeugzugriff ohne Vertrauensgrenzen. Und alles geht mit einem Gebet statt einem Beweis in die Produktion.
+
+Das ist die Lücke, die KI-Vertrauens- und Sicherheitsbereitschaft schließen soll. Und sie basiert auf drei Säulen.
+
+## Layer Retrofit — Sicherheit im Nachhinein
+
+Nicht jedes Team hat den Luxus, von vorne anzufangen. Die meisten produktiven KI-Systeme laufen bereits, bedienen bereits Nutzer und tragen bereits Risiken, die niemand kartiert hat.
+
+Layer Retrofit ist die Praxis, Sicherheitsschichten in bestehende Systeme zu injizieren, ohne einen kompletten Neuaufbau zu erfordern:
+
+- **Eingabe-Schutzmaßnahmen** — Prompt-Injection-Filter, Inhaltsklassifizierer und Eingabebereinigung an der API-Grenze
+- **Retrieval-Validierung** — Vertrauensbewertung abgerufener Dokumente, Relevanzschwellen und Quellenverifizierung zwischen dem Vektorspeicher und dem LLM
+- **Ausgabeüberwachung** — Echtzeit-Prüfungen auf Halluzinationsmarker, Datenleckmuster und Richtlinienverstöße, bevor Antworten die Nutzer erreichen
+- **Laufzeittelemetrie** — Strukturierte Protokollierung jedes Retrievals, jeder Generierung und jedes Werkzeugaufrufs für die Post-Incident-Analyse
+
+Die zentrale Erkenntnis: Sie müssen das System nicht neu aufbauen. Sie müssen wissen, wo die Vertrauensgrenzen hätten sein sollen — und sie installieren.
+
+## Secure Starter Kit — Sicherheit vom ersten Tag an
+
+Für Teams, die neue RAG- oder autonome Agentensysteme bauen, liegt die Chance darin, es von Anfang an richtig zu machen.
+
+Ein Secure Starter Kit ist eine vorgehärtete Projektvorlage, die Folgendes enthält:
+
+- **Prompt-Injection-Abwehrschichten**, die in die Anfrage-Pipeline integriert sind
+- **Retrieval-Sandboxing**, das Dokumentenquellen isoliert und Kreuzkontamination verhindert
+- **Ausgabevalidierungsketten**, die Halluzinationen, toxische Inhalte und Richtlinienverstöße abfangen, bevor sie die Nutzer erreichen
+- **Rollenbasierter Werkzeugzugriff** für Agenten, damit keine einzelne Komponente uneingeschränkte Fähigkeiten hat
+- **Strukturierte Protokollierung und Audit-Trails** für jede Entscheidung, die das System trifft
+
+Das Ziel ist nicht, Teams zu verlangsamen. Das Ziel ist, die Sicherheitsschulden zu eliminieren, die sich ansammeln, wenn Teams schnell liefern und planen, „Sicherheit später hinzuzufügen." Später kommt nie.
+
+## Launch Gate — Kein Nachweis, kein Start
+
+Die letzte Säule ist der Kontrollpunkt zwischen Entwicklung und Produktion.
+
+Launch Gate ist ein strukturierter Go/No-Go-Prozess, den jedes KI-Deployment durchlaufen muss, bevor es echte Nutzer erreicht:
+
+1. **Adversariale Sonden** — Systematische Prompt-Injection-, Jailbreak- und Manipulationstests
+2. **Vertrauensgrenzen-Validierung** — Verifizierung, dass jede Komponente ihre definierten Grenzen einhält
+3. **Halluzinations-Stresstests** — Grenzfall-Eingaben, die darauf ausgelegt sind, Konfabulation auszulösen und die Ausgabezuverlässigkeit zu messen
+4. **Datenleck-Prüfungen** — Sonden für die Extraktion von Trainingsdaten, PII-Exposition und Kontextfenster-Lecks
+5. **Compliance-Verifizierung** — Übereinstimmung mit dem EU AI Act, dem NIST AI RMF oder organisatorischen Richtlinien
+
+Das Prinzip ist einfach: Wenn Sie keinen Nachweis erbringen können, dass das System bereit ist, startet es nicht.
+
+## Warum diese drei zusammen
+
+Jede Säule deckt eine andere Phase des KI-Lebenszyklus ab:
+
+- **Layer Retrofit** behandelt Systeme, die bereits im Einsatz sind
+- **Secure Starter Kit** behandelt Systeme, die gerade gebaut werden
+- **Launch Gate** behandelt den kritischen Moment zwischen Entwicklung und Deployment
+
+Zusammen bilden sie eine vollständige Praxis — eine, die jedem Team, in jeder Phase, bei der Bereitstellung jeder Art von KI-System dienen kann, von RAG bis zu vollständig autonomen Agenten.
+
+Das ist der Weg, den ich aufbaue. Nicht als Theorie, sondern als Arbeitspraxis.
