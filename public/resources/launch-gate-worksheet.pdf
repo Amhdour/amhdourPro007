@@ -1,1 +1,230 @@
-%PDF-1.4 placeholder
+%PDF-1.4
+
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /Length 2937 >>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(Launch Gate Assessment Worksheet) Tj
+ET
+0.3 0.5 0.8 RG
+50 720 500 0.5 re f
+BT
+/F1 9 Tf
+50 710 Td
+(Ahmed Amhdour | AI Trust & Security Readiness Engineer) Tj
+ET
+BT
+/F1 14 Tf
+50 685 Td
+(1. Pre-Launch Identity) Tj
+ET
+BT
+/F1 10 Tf
+60 665 Td
+(System Name: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 650 Td
+(Version: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 635 Td
+(Target Launch Date: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 620 Td
+(Risk Classification: [ ] High-Risk  [ ] Limited  [ ] Minimal) Tj
+ET
+BT
+/F1 14 Tf
+50 595 Td
+(2. Security Readiness Checkpoints) Tj
+ET
+BT
+/F1 10 Tf
+60 575 Td
+([ ] PASS / [ ] FAIL  Input validation and prompt injection defenses tested) Tj
+ET
+BT
+/F1 10 Tf
+60 560 Td
+([ ] PASS / [ ] FAIL  Retrieval sandboxing and source validation confirmed) Tj
+ET
+BT
+/F1 10 Tf
+60 545 Td
+([ ] PASS / [ ] FAIL  Output validation chains operational) Tj
+ET
+BT
+/F1 10 Tf
+60 530 Td
+([ ] PASS / [ ] FAIL  Agent tool access controls enforced) Tj
+ET
+BT
+/F1 10 Tf
+60 515 Td
+([ ] PASS / [ ] FAIL  Data leakage prevention verified) Tj
+ET
+BT
+/F1 14 Tf
+50 490 Td
+(3. Adversarial Testing Results) Tj
+ET
+BT
+/F1 10 Tf
+60 470 Td
+(Prompt injection test: ___ / ___ attacks blocked) Tj
+ET
+BT
+/F1 10 Tf
+60 455 Td
+(Data poisoning test: ___ / ___ attempts detected) Tj
+ET
+BT
+/F1 10 Tf
+60 440 Td
+(Hallucination stress test: ___ % accuracy under adversarial inputs) Tj
+ET
+BT
+/F1 10 Tf
+60 425 Td
+(Tool misuse test: ___ / ___ unauthorized calls blocked) Tj
+ET
+BT
+/F1 10 Tf
+60 410 Td
+(Red team summary: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 385 Td
+(4. Compliance & Governance) Tj
+ET
+BT
+/F1 10 Tf
+60 365 Td
+([ ] OWASP LLM Top 10 risks addressed) Tj
+ET
+BT
+/F1 10 Tf
+60 350 Td
+([ ] EU AI Act requirements met \(if applicable\)) Tj
+ET
+BT
+/F1 10 Tf
+60 335 Td
+([ ] NIST AI RMF alignment documented) Tj
+ET
+BT
+/F1 10 Tf
+60 320 Td
+([ ] Transparency and explainability requirements satisfied) Tj
+ET
+BT
+/F1 10 Tf
+60 305 Td
+([ ] Human oversight mechanisms in place) Tj
+ET
+BT
+/F1 14 Tf
+50 280 Td
+(5. Monitoring & Incident Readiness) Tj
+ET
+BT
+/F1 10 Tf
+60 260 Td
+([ ] Runtime monitoring dashboards deployed) Tj
+ET
+BT
+/F1 10 Tf
+60 245 Td
+([ ] Alerting thresholds configured) Tj
+ET
+BT
+/F1 10 Tf
+60 230 Td
+([ ] Incident response playbook documented) Tj
+ET
+BT
+/F1 10 Tf
+60 215 Td
+([ ] Rollback procedures tested) Tj
+ET
+BT
+/F1 10 Tf
+60 200 Td
+([ ] Audit logging active and verified) Tj
+ET
+BT
+/F1 14 Tf
+50 175 Td
+(6. Go / No-Go Decision) Tj
+ET
+BT
+/F1 10 Tf
+60 155 Td
+(Total PASS: ___  Total FAIL: ___) Tj
+ET
+BT
+/F1 10 Tf
+60 140 Td
+(Decision: [ ] GO  [ ] NO-GO  [ ] CONDITIONAL) Tj
+ET
+BT
+/F1 10 Tf
+60 125 Td
+(Conditions \(if any\): ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 110 Td
+(Approved By: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 95 Td
+(Date: ____________________________) Tj
+ET
+BT
+/F1 8 Tf
+50 30 Td
+(amhdour.com | AI Trust & Security Readiness for RAG and Autonomous Agents) Tj
+ET
+endstream
+endobj
+
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000060 00000 n 
+0000000118 00000 n 
+0000003107 00000 n 
+0000003234 00000 n 
+
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3305
+%%EOF

@@ -3,33 +3,40 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ahmed Amhdour - AI Security Engineer | Portfolio",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com"),
+  title: "Ahmed Amhdour - AI Security Readiness Engineer | Portfolio",
   description:
-    "Ahmed Amhdour is an AI Security Engineer specializing in AI Trust & Security Readiness for RAG to Autonomous Agents. Offering practical guardrails, penetration testing, and production readiness for secure AI solutions.",
+    "Ahmed Amhdour is an AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
   keywords: [
-    "AI Security Engineer",
-    "Cyber Security",
-    "Penetration Testing",
+    "AI Security Readiness Engineer",
     "AI Trust",
     "Security Readiness",
     "RAG Security",
+    "Autonomous Agents",
+    "Layer Retrofit",
+    "Secure Starter Kit",
+    "Launch Gate",
+    "AI Security Evals",
+    "Runtime Guardrails",
+    "LLM Security",
+    "OWASP LLM Top 10",
     "Ahmed Amhdour",
   ],
   authors: [{ name: "Ahmed Amhdour" }],
   openGraph: {
     type: "website",
-    title: "Ahmed Amhdour - AI Security Engineer",
+    title: "Ahmed Amhdour - AI Security Readiness Engineer",
     description:
-      "AI Security Engineer specializing in AI Trust & Security Readiness. Helping teams ship secure, resilient AI solutions with strong guardrails and production readiness.",
+      "AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
     siteName: "Ahmed Amhdour Portfolio",
     locale: "en_US",
     images: [{ url: "/images/selfie.jpg", width: 300, height: 400, alt: "Ahmed Amhdour" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahmed Amhdour - AI Security Engineer",
+    title: "Ahmed Amhdour - AI Security Readiness Engineer",
     description:
-      "AI Security Engineer specializing in AI Trust & Security Readiness for RAG to Autonomous Agents.",
+      "AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
     images: ["/images/selfie.jpg"],
   },
   icons: {

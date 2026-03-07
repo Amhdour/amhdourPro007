@@ -1,1 +1,260 @@
-%PDF-1.4 placeholder
+%PDF-1.4
+
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /Length 3477 >>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(AI Threat Model Template) Tj
+ET
+0.3 0.5 0.8 RG
+50 720 500 0.5 re f
+BT
+/F1 9 Tf
+50 710 Td
+(Ahmed Amhdour | AI Trust & Security Readiness Engineer) Tj
+ET
+BT
+/F1 14 Tf
+50 685 Td
+(1. System Overview) Tj
+ET
+BT
+/F1 10 Tf
+60 665 Td
+(System Name: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 650 Td
+(System Type: [ ] RAG Pipeline  [ ] Autonomous Agent  [ ] Hybrid) Tj
+ET
+BT
+/F1 10 Tf
+60 635 Td
+(Data Sources: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 620 Td
+(LLM Provider: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 605 Td
+(Deployment Environment: [ ] Cloud  [ ] On-Prem  [ ] Hybrid) Tj
+ET
+BT
+/F1 14 Tf
+50 580 Td
+(2. Attack Surface: Data Ingestion) Tj
+ET
+BT
+/F1 10 Tf
+60 560 Td
+(Threat: Document poisoning via malicious uploads) Tj
+ET
+BT
+/F1 10 Tf
+60 545 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 530 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 515 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 490 Td
+(3. Attack Surface: Prompt Injection) Tj
+ET
+BT
+/F1 10 Tf
+60 470 Td
+(Threat: Direct and indirect prompt injection) Tj
+ET
+BT
+/F1 10 Tf
+60 455 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 440 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 425 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 400 Td
+(4. Attack Surface: Retrieval Manipulation) Tj
+ET
+BT
+/F1 10 Tf
+60 380 Td
+(Threat: Context poisoning via retrieval exploitation) Tj
+ET
+BT
+/F1 10 Tf
+60 365 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 350 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 335 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 310 Td
+(5. Attack Surface: Tool Misuse (Agents)) Tj
+ET
+BT
+/F1 10 Tf
+60 290 Td
+(Threat: Unauthorized tool calls or permission escalation) Tj
+ET
+BT
+/F1 10 Tf
+60 275 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 260 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 245 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 220 Td
+(6. Attack Surface: Output Manipulation) Tj
+ET
+BT
+/F1 10 Tf
+60 200 Td
+(Threat: Data leakage, harmful content, hallucination) Tj
+ET
+BT
+/F1 10 Tf
+60 185 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 170 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 155 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 130 Td
+(7. Attack Surface: Goal Drift (Agents)) Tj
+ET
+BT
+/F1 10 Tf
+60 110 Td
+(Threat: Autonomous agents deviating from intended objectives) Tj
+ET
+BT
+/F1 10 Tf
+60 95 Td
+(Risk Level: [ ] Critical  [ ] High  [ ] Medium  [ ] Low) Tj
+ET
+BT
+/F1 10 Tf
+60 80 Td
+(Current Controls: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 65 Td
+(Mitigation Plan: ____________________________) Tj
+ET
+BT
+/F1 14 Tf
+50 740 Td
+(8. Overall Risk Assessment) Tj
+ET
+BT
+/F1 10 Tf
+60 720 Td
+(Total Critical Risks: ___  High: ___  Medium: ___  Low: ___) Tj
+ET
+BT
+/F1 10 Tf
+60 705 Td
+(Priority Actions: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 690 Td
+(Review Date: ____________________________) Tj
+ET
+BT
+/F1 10 Tf
+60 675 Td
+(Assessed By: ____________________________) Tj
+ET
+BT
+/F1 8 Tf
+50 30 Td
+(amhdour.com | AI Trust & Security Readiness for RAG and Autonomous Agents) Tj
+ET
+endstream
+endobj
+
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000060 00000 n 
+0000000118 00000 n 
+0000003647 00000 n 
+0000003774 00000 n 
+
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3845
+%%EOF

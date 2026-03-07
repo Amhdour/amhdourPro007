@@ -1,1 +1,215 @@
-%PDF-1.4 placeholder
+%PDF-1.4
+
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /Length 2999 >>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(Prompt Injection Defense Guide) Tj
+ET
+0.3 0.5 0.8 RG
+50 720 500 0.5 re f
+BT
+/F1 9 Tf
+50 710 Td
+(Ahmed Amhdour | AI Trust & Security Readiness Engineer) Tj
+ET
+BT
+/F1 14 Tf
+50 685 Td
+(1. Understanding Prompt Injection) Tj
+ET
+BT
+/F1 10 Tf
+60 665 Td
+(Direct injection: user crafts input to override system prompt) Tj
+ET
+BT
+/F1 10 Tf
+60 650 Td
+(Indirect injection: malicious instructions embedded in retrieved data) Tj
+ET
+BT
+/F1 10 Tf
+60 635 Td
+(Context manipulation: exploiting conversation history or memory) Tj
+ET
+BT
+/F1 10 Tf
+60 620 Td
+(Encoded attacks: using base64, unicode, or obfuscation to bypass filters) Tj
+ET
+BT
+/F1 14 Tf
+50 595 Td
+(2. Input Sanitization Layer) Tj
+ET
+BT
+/F1 10 Tf
+60 575 Td
+(Strip or escape special instruction patterns from user input) Tj
+ET
+BT
+/F1 10 Tf
+60 560 Td
+(Detect and block known injection signatures) Tj
+ET
+BT
+/F1 10 Tf
+60 545 Td
+(Apply length and character set limits to inputs) Tj
+ET
+BT
+/F1 10 Tf
+60 530 Td
+(Normalize unicode and encoding before processing) Tj
+ET
+BT
+/F1 10 Tf
+60 515 Td
+(Log all sanitization actions for audit review) Tj
+ET
+BT
+/F1 14 Tf
+50 490 Td
+(3. Prompt/Response Boundary Enforcement) Tj
+ET
+BT
+/F1 10 Tf
+60 470 Td
+(Separate system prompts from user input with clear delimiters) Tj
+ET
+BT
+/F1 10 Tf
+60 455 Td
+(Use structured message formats \(system/user/assistant roles\)) Tj
+ET
+BT
+/F1 10 Tf
+60 440 Td
+(Never include raw user input inside system prompt templates) Tj
+ET
+BT
+/F1 10 Tf
+60 425 Td
+(Validate that system prompt integrity is maintained at runtime) Tj
+ET
+BT
+/F1 14 Tf
+50 400 Td
+(4. Canary Token Detection) Tj
+ET
+BT
+/F1 10 Tf
+60 380 Td
+(Embed hidden tokens in system prompts that should never appear in output) Tj
+ET
+BT
+/F1 10 Tf
+60 365 Td
+(Monitor outputs for leaked canary tokens to detect injection success) Tj
+ET
+BT
+/F1 10 Tf
+60 350 Td
+(Rotate canary tokens periodically to prevent attacker adaptation) Tj
+ET
+BT
+/F1 10 Tf
+60 335 Td
+(Alert and block responses that contain canary token leaks) Tj
+ET
+BT
+/F1 14 Tf
+50 310 Td
+(5. Multi-Stage Validation) Tj
+ET
+BT
+/F1 10 Tf
+60 290 Td
+(Stage 1: Pre-LLM input filtering and sanitization) Tj
+ET
+BT
+/F1 10 Tf
+60 275 Td
+(Stage 2: LLM-level instruction hierarchy enforcement) Tj
+ET
+BT
+/F1 10 Tf
+60 260 Td
+(Stage 3: Post-LLM output validation and safety classification) Tj
+ET
+BT
+/F1 10 Tf
+60 245 Td
+(Stage 4: Response-level data leakage and policy compliance checks) Tj
+ET
+BT
+/F1 14 Tf
+50 220 Td
+(6. Defense-in-Depth Recommendations) Tj
+ET
+BT
+/F1 10 Tf
+60 200 Td
+(Never rely on a single defense layer) Tj
+ET
+BT
+/F1 10 Tf
+60 185 Td
+(Combine rule-based filters with ML-based classifiers) Tj
+ET
+BT
+/F1 10 Tf
+60 170 Td
+(Regularly test defenses with adversarial red team exercises) Tj
+ET
+BT
+/F1 10 Tf
+60 155 Td
+(Update defense patterns as new injection techniques emerge) Tj
+ET
+BT
+/F1 10 Tf
+60 140 Td
+(Document all defenses and their coverage in your threat model) Tj
+ET
+BT
+/F1 8 Tf
+50 30 Td
+(amhdour.com | AI Trust & Security Readiness for RAG and Autonomous Agents) Tj
+ET
+endstream
+endobj
+
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000060 00000 n 
+0000000118 00000 n 
+0000003169 00000 n 
+0000003296 00000 n 
+
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3367
+%%EOF
