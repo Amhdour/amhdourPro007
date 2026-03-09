@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import LaunchGateStatusWidget from "@/components/LaunchGateStatusWidget";
 
 export const metadata: Metadata = {
-  title: "Secure Support Agent Starter Kit",
+  title: "Secure Support Agent Starter Kit | www.amhdour.cv",
   description:
     "Production-oriented starter kit for secure support agents across RAG and autonomous agent systems, with policy-first orchestration, bounded retrieval/tool access, auditable telemetry, and evidence-based readiness.",
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "article",
-    title: "Secure Support Agent Starter Kit",
+    title: "Secure Support Agent Starter Kit | www.amhdour.cv",
     description:
       "Policy-first secure support-agent starter kit with scenario-driven security evaluations and evidence-based launch-gate readiness.",
     url: "/secure-support-agent-starter-kit",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Secure Support Agent Starter Kit",
+    title: "Secure Support Agent Starter Kit | www.amhdour.cv",
     description:
       "Secure support-agent architecture for RAG and autonomous agents with policy-first controls and evidence-based readiness.",
     images: ["/images/secure-support-agent-architecture.svg"],
@@ -51,7 +51,7 @@ const demonstrableOutputs = `pytest
 python -m evals.runner
 python -m launch_gate.engine`;
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.amhdour.cv";
 
 
 export default function SecureSupportAgentStarterKitPage() {

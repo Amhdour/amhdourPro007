@@ -19,15 +19,15 @@ import Changelog from "@/components/sections/Changelog";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.amhdour.cv";
 
 export const metadata: Metadata = {
-  title: "AI Trust & Security Readiness for Secure Support Agents",
+  title: "AI Trust & Security Readiness for Secure Support Agents | www.amhdour.cv",
   description:
     "Ahmed Amhdour helps teams ship secure support agents with the Secure Support Agent Starter Kit, combining policy-first orchestration, bounded retrieval/tool access, and evidence-based readiness.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Secure Support Agent Starter Kit | Ahmed Amhdour",
+    title: "Secure Support Agent Starter Kit | www.amhdour.cv",
     description:
       "Flagship offering for secure support agents across RAG and autonomous agent systems, with policy-first controls and evidence-based launch readiness.",
     url: "/",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Secure Support Agent Starter Kit | Ahmed Amhdour",
+    title: "Secure Support Agent Starter Kit | www.amhdour.cv",
     description:
       "Secure support agents for RAG and autonomous systems with policy-first orchestration and evidence-based readiness.",
     images: ["/images/secure-support-agent-architecture.svg"],

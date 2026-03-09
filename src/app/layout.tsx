@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.amhdour.cv";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
-    template: "%s | Ahmed Amhdour",
+    default: "Ahmed Amhdour | www.amhdour.cv",
+    template: "%s | www.amhdour.cv",
   },
   description:
     "AI Trust & Security Readiness Engineer for RAG and autonomous agents. Current flagship offering: Secure Support Agent Starter Kit with policy-first orchestration and evidence-based readiness.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
+    title: "Ahmed Amhdour | www.amhdour.cv",
     description:
       "Secure Support Agent Starter Kit: a production-oriented foundation for secure support agents with policy-first controls and evidence-based launch readiness.",
     siteName: "Ahmed Amhdour",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
+    title: "Ahmed Amhdour | www.amhdour.cv",
     description:
       "Secure Support Agent Starter Kit: policy-first orchestration, bounded retrieval/tool access, and evidence-based readiness for support agents.",
     images: ["/images/secure-support-agent-architecture.svg"],

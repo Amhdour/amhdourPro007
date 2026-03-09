@@ -21,7 +21,7 @@ export async function GET() {
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.amhdour.cv";
 
   const rssItems = posts
     .map(
