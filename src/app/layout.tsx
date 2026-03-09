@@ -2,42 +2,52 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://amhdour.com"),
-  title: "Ahmed Amhdour - AI Security Readiness Engineer | Portfolio",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
+    template: "%s | Ahmed Amhdour",
+  },
   description:
-    "Ahmed Amhdour is an AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
+    "AI Trust & Security Readiness Engineer for RAG and autonomous agents. Current flagship offering: Secure Support Agent Starter Kit with policy-first orchestration and evidence-based readiness.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
-    "AI Security Readiness Engineer",
-    "AI Trust",
-    "Security Readiness",
-    "RAG Security",
-    "Autonomous Agents",
-    "Layer Retrofit",
-    "Secure Starter Kit",
-    "Launch Gate",
+    "AI Trust & Security Readiness Engineer",
+    "Secure Support Agent Starter Kit",
+    "Secure support agents",
+    "RAG security",
+    "Agent security",
+    "Policy-first orchestration",
+    "Evidence-based readiness",
     "AI Security Evals",
     "Runtime Guardrails",
-    "LLM Security",
-    "OWASP LLM Top 10",
+    "Retrieval Security",
+    "Tool Authorization",
+    "Auditability",
+    "Incident Readiness",
     "Ahmed Amhdour",
   ],
   authors: [{ name: "Ahmed Amhdour" }],
   openGraph: {
     type: "website",
-    title: "Ahmed Amhdour - AI Security Readiness Engineer",
+    url: "/",
+    title: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
     description:
-      "AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
-    siteName: "Ahmed Amhdour Portfolio",
+      "Secure Support Agent Starter Kit: a production-oriented foundation for secure support agents with policy-first controls and evidence-based launch readiness.",
+    siteName: "Ahmed Amhdour",
     locale: "en_US",
-    images: [{ url: "/images/selfie.jpg", width: 300, height: 400, alt: "Ahmed Amhdour" }],
+    images: [{ url: "/images/secure-support-agent-architecture.svg", width: 1400, height: 840, alt: "Secure Support Agent Starter Kit architecture flow" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahmed Amhdour - AI Security Readiness Engineer",
+    title: "Ahmed Amhdour | AI Trust & Security Readiness Engineer",
     description:
-      "AI Trust & Security Readiness Engineer for RAG and Autonomous Agents, specializing in Layer Retrofit, Secure Starter Kits, and Launch Gates.",
-    images: ["/images/selfie.jpg"],
+      "Secure Support Agent Starter Kit: policy-first orchestration, bounded retrieval/tool access, and evidence-based readiness for support agents.",
+    images: ["/images/secure-support-agent-architecture.svg"],
   },
   icons: {
     icon: [

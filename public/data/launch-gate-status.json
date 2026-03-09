@@ -1,0 +1,10 @@
+{
+  "service": "secure-support-agent-starter-kit",
+  "status": "READY",
+  "summary": "Launch-gate checks passed for the latest published artifact set. Residual risks are documented and currently within accepted bounds.",
+  "evaluatedAt": "2026-02-12T10:30:00Z",
+  "blockerCount": 0,
+  "residualRiskCount": 2,
+  "source": "artifact",
+  "artifactPath": "artifacts/logs/evals/"
+}

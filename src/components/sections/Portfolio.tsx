@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { dictionaries } from "@/lib/dictionaries";
 
@@ -13,11 +13,11 @@ type Project = {
   tags: readonly string[];
 };
 
-const CASE_STUDY_SLUGS: Record<string, string> = {
-  "Layer Retrofit": "layer-retrofit",
-  "Secure Starter Kit": "secure-starter-kit",
-  "Launch Gate": "launch-gate",
+const FEATURE_HREFS: Record<string, string> = {
+  "Secure Support Agent Starter Kit": "/secure-support-agent-starter-kit",
 };
+
+const FLAGSHIP_ALT_TEXT = "Dark architecture flow diagram for Secure Support Agent Starter Kit: Agent Request, Policy Engine, Retrieval, Model, Tool Router, Response, and Telemetry/Evidence layer.";
 
 function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Project; caseStudyHref?: string; caseStudyLabel: string }) {
   const [expanded, setExpanded] = useState(false);
@@ -30,7 +30,7 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
       <div className="relative">
         <Image
           src={project.image}
-          alt={`${project.name} portfolio image`}
+          alt={project.name === "Secure Support Agent Starter Kit" ? FLAGSHIP_ALT_TEXT : `${project.name} portfolio image`}
           width={1536}
           height={864}
           className="object-cover cursor-pointer relative brightness-50 group-hover:brightness-100 ease-in-out duration-500 aspect-video w-full"
@@ -40,18 +40,11 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
         </h3>
       </div>
       <div
-        className={`collapsible-container flex flex-col gap-2 px-2 bg-site-block overflow-hidden transition-all duration-500 ${
-          expanded ? "max-h-[500px] py-2" : "max-h-0"
+        className={`collapsible-container flex flex-col gap-2 px-4 bg-site-block overflow-hidden transition-all duration-500 ${
+          expanded ? "max-h-[500px] py-4" : "max-h-0"
         }`}
       >
         <h3 className="text-3xl font-semibold">{project.name}</h3>
-        <div className="flex flex-wrap gap-1 mb-1">
-          {project.tags.map((tag) => (
-            <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-site-primary/10 text-site-primary font-medium">
-              {tag}
-            </span>
-          ))}
-        </div>
         <p>{project.description}</p>
         {caseStudyHref && (
           <Link
@@ -69,19 +62,6 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
 
 export default function Portfolio({ locale = "en" }: { locale?: "en" | "ar" | "fr" | "de" }) {
   const t = dictionaries[locale].portfolio;
-  const [activeTag, setActiveTag] = useState<string | null>(null);
-
-  const caseStudyBase = locale === "en" ? "/case-studies" : `/${locale}/case-studies`;
-
-  const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    t.projects.forEach((p) => p.tags.forEach((tag) => tags.add(tag)));
-    return Array.from(tags);
-  }, [t.projects]);
-
-  const filtered = activeTag
-    ? t.projects.filter((p) => (p.tags as readonly string[]).includes(activeTag))
-    : t.projects;
 
   return (
     <section className="w-full bg-site-section" id="portfolio">
@@ -96,39 +76,14 @@ export default function Portfolio({ locale = "en" }: { locale?: "en" | "ar" | "f
             </h3>
           </div>
         </ScrollReveal>
-        <div className="flex flex-wrap gap-2 justify-center">
-          <button
-            onClick={() => setActiveTag(null)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
-              activeTag === null
-                ? "bg-site-primary text-white"
-                : "bg-site-block text-site-muted hover:text-site-primary border border-site-muted/30"
-            }`}
-          >
-            {t.filterAll}
-          </button>
-          {allTags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
-                activeTag === tag
-                  ? "bg-site-primary text-white"
-                  : "bg-site-block text-site-muted hover:text-site-primary border border-site-muted/30"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-        <div className="flex flex-row flex-wrap gap-8 justify-center">
-          {filtered.map((project, index) => {
-            const slug = CASE_STUDY_SLUGS[project.name];
+        <div className="w-full max-w-[900px] mx-auto">
+          {t.projects.map((project, index) => {
+            const href = FEATURE_HREFS[project.name];
             return (
-              <ScrollReveal key={project.name} animation={index % 2 === 0 ? "fade-left" : "fade-right"} delay={index * 100} className="w-full md:w-[calc(50%-1rem)]">
+              <ScrollReveal key={project.name} animation="fade-up" delay={index * 100}>
                 <ProjectCard
                   project={project}
-                  caseStudyHref={slug ? `${caseStudyBase}/${slug}` : undefined}
+                  caseStudyHref={href}
                   caseStudyLabel={t.viewCaseStudy}
                 />
               </ScrollReveal>
