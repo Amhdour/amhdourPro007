@@ -97,11 +97,6 @@ export default function Hero({ locale = "en" }: { locale?: "en" | "ar" | "fr" | 
             </a>
           </div>
           <div className="flex flex-row gap-3 justify-center md:justify-start hero-animate hero-delay-3">
-            <Button asChild className="bg-site-primary hover:bg-site-primary-light text-white font-semibold px-6 py-3">
-              <a href="/Ahmed_Amhdour_CV.pdf" download>
-                {t.downloadCv}
-              </a>
-            </Button>
             <Button
               variant="outline"
               className="border-site-primary text-site-primary hover:bg-site-primary hover:text-white font-semibold px-6 py-3"
