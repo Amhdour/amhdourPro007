@@ -11,6 +11,8 @@ type Project = {
   image: string;
   description: string;
   tags: readonly string[];
+  directLink?: string;
+  directLinkLabel?: string;
 };
 
 const CASE_STUDY_SLUGS: Record<string, string> = {
@@ -53,6 +55,15 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
           ))}
         </div>
         <p>{project.description}</p>
+        {project.directLink && (
+          <Link
+            href={project.directLink}
+            onClick={(e) => e.stopPropagation()}
+            className="text-site-primary hover:underline text-sm font-semibold mt-2 inline-block mr-4"
+          >
+            {project.directLinkLabel || caseStudyLabel}
+          </Link>
+        )}
         {caseStudyHref && (
           <Link
             href={caseStudyHref}
@@ -70,6 +81,14 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
 export default function Portfolio({ locale = "en" }: { locale?: "en" | "ar" | "fr" | "de" }) {
   const t = dictionaries[locale].portfolio;
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const evidenceCta =
+    locale === "ar"
+      ? "حزمة أدلة RAG →"
+      : locale === "fr"
+        ? "Dossier de preuves RAG →"
+        : locale === "de"
+          ? "RAG-Evidenzpaket →"
+          : "RAG Evidence Pack →";
 
   const caseStudyBase = locale === "en" ? "/case-studies" : `/${locale}/case-studies`;
 
@@ -94,6 +113,12 @@ export default function Portfolio({ locale = "en" }: { locale?: "en" | "ar" | "f
             <h3 className="text-2xl font-bold mx-auto pb-2 text-center">
               {t.heading}
             </h3>
+            <Link
+              href="/evidence/rag-security-platform"
+              className="block w-max mx-auto mt-3 text-sm font-semibold text-site-primary hover:underline"
+            >
+              {evidenceCta}
+            </Link>
           </div>
         </ScrollReveal>
         <div className="flex flex-wrap gap-2 justify-center">

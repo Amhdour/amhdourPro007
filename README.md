@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmed Amhdour — AI Trust & Security Website
 
-## Getting Started
+Production website for Ahmed Amhdour’s AI Trust & Security Readiness work, built to present portfolio, evidence, and security content in a clear, review-friendly format.
 
-First, run the development server:
+## What this website represents
+This site is the public home for Ahmed’s AI Trust & Security positioning: practical security guidance for RAG and agent systems, portfolio initiatives, case-study style material, and evidence packaging for judges, recruiters, and technical collaborators.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Main sections and pages
+- **Homepage**: positioning, portfolio highlights, services, skills, case-study previews, and contact.
+- **Evidence page**: `/evidence/rag-security-platform` (award/review-focused evidence pack).
+- **Case studies**: `/case-studies/[slug]`.
+- **Blog**: `/blog` and `/blog/[slug]`.
+- **Resources**: `/resources`.
+- **Assessment**: `/assessment`.
+- **Localized routes**: `/ar`, `/fr`, `/de` for core sections.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where AI Trust & Security content lives
+- Homepage section components: `src/components/sections/*`
+- Portfolio and messaging dictionaries: `src/lib/dictionaries.ts`
+- Evidence page route: `src/app/evidence/rag-security-platform/page.tsx`
+- Evidence content model: `src/content/evidence/ragSecurityPlatform.ts`
+- Security-focused blog content: `src/content/blog*/`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Run locally
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open:
+   - `http://localhost:5000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build and checks
+- Production build:
+  ```bash
+  npm run build
+  ```
+- Start production server locally:
+  ```bash
+  npm run start
+  ```
+- Lint:
+  ```bash
+  npm run lint
+  ```
 
-## Learn More
+## How to update the evidence page
+1. Edit structured content in `src/content/evidence/ragSecurityPlatform.ts`.
+2. Update layout/section rendering in `src/app/evidence/rag-security-platform/page.tsx` if needed.
+3. Keep claims conservative and verifiable.
+4. Do **not** add client counts, adoption metrics, awards, or impact numbers unless they are publicly documented and referenced.
+5. Label unpublished artifacts clearly as placeholders (for example, PDF links not yet public).
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment notes
+- The app uses standard Next.js build/start scripts and is deployable on any platform that supports Next.js.
+- Runtime host/port defaults in this repo are configured in `package.json` scripts (`0.0.0.0:5000`).

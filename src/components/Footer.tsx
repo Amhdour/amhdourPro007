@@ -9,6 +9,11 @@ export default function Footer({ locale = "en" }: { locale?: "en" | "ar" | "fr" 
   const headerDict = dictionaries[locale].header;
   const blogHref = locale === "ar" ? "/ar/blog" : locale === "fr" ? "/fr/blog" : locale === "de" ? "/de/blog" : "/blog";
   const menuLinks = headerDict.nav.filter((link) => link.href !== blogHref);
+  const evidenceHref = "/evidence/rag-security-platform";
+  const evidenceLabel = locale === "ar" ? "حزمة الأدلة" : locale === "fr" ? "Dossier de preuves" : locale === "de" ? "Evidenz" : "Evidence";
+  const menuLinksWithEvidence = menuLinks.some((link) => link.href === evidenceHref)
+    ? menuLinks
+    : [...menuLinks, { href: evidenceHref, label: evidenceLabel }];
   const homeHref = locale === "ar" ? "/ar" : locale === "fr" ? "/fr" : locale === "de" ? "/de" : "/";
 
   return (
@@ -60,7 +65,7 @@ export default function Footer({ locale = "en" }: { locale?: "en" | "ar" | "fr" 
         </div>
         <div className="flex flex-col gap-2 md:w-1/3">
           <h4 className="font-bold text-lg">{dict.menuTitle}</h4>
-          {menuLinks.map((link) => (
+          {menuLinksWithEvidence.map((link) => (
             <a
               key={link.label}
               href={link.href}

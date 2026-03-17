@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Portfolio from "@/components/sections/Portfolio";
 import ThreatVisualizer from "@/components/sections/ThreatVisualizer";
+import WhyThisMattersNow from "@/components/sections/WhyThisMattersNow";
 import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
 import Experiences from "@/components/sections/Experiences";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Portfolio />
+      <WhyThisMattersNow />
       <ThreatVisualizer />
       <Services />
       <Skills />
