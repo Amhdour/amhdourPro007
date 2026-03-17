@@ -316,3 +316,74 @@ body::-webkit-scrollbar-thumb {
 .hero-delay-4 {
   animation-delay: 0.4s;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  .evidence-pack-page header,
+  .evidence-pack-page footer,
+  .evidence-pack-page #menu,
+  .print-hidden {
+    display: none !important;
+  }
+
+  .evidence-pack-page main {
+    padding-top: 0 !important;
+  }
+
+  .evidence-pack-page,
+  .evidence-pack-page * {
+    color: #111 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .evidence-pack-page a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  .evidence-pack-page .max-w-\[1100px\] {
+    max-width: 100% !important;
+    padding: 0 !important;
+    gap: 14px !important;
+  }
+
+  .print-section,
+  .print-break-before {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .controls-matrix-table {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .controls-matrix-cards {
+    display: none !important;
+  }
+
+  .controls-matrix-table table {
+    min-width: 0 !important;
+    width: 100% !important;
+    font-size: 11px !important;
+  }
+
+  .architecture-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .architecture-step {
+    min-height: auto !important;
+  }
+}
