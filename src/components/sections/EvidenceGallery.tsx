@@ -20,6 +20,7 @@ type EvidenceItem = {
   href: string;
   hrefLabel: string;
   image?: string;
+  group?: string;
 };
 
 const items: readonly EvidenceItem[] = [
@@ -67,6 +68,47 @@ const items: readonly EvidenceItem[] = [
     href: "/evidence/rag-security-platform",
     hrefLabel: "Open threat model context",
     image: "/projectimages/screenshot_1.png",
+  },
+  {
+    title: "Onyx analysis architecture diagram",
+    type: "Architecture Diagrams",
+    summary: "Onyx-Based Analysis Evidence: architecture diagram documenting reconstructed runtime stages and security control insertion points.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/architecture-reconstruction.md",
+    hrefLabel: "Open architecture diagram",
+    image: "/projectimages/screenshot_4.png",
+    group: "Onyx-Based Analysis Evidence",
+  },
+  {
+    title: "Onyx trust boundary map",
+    type: "Threat Model Visuals",
+    summary: "Onyx-Based Analysis Evidence: trust boundary map for user, retrieval, tool, and tenant isolation transitions.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/trust-boundaries.md",
+    hrefLabel: "Open trust boundary map",
+    group: "Onyx-Based Analysis Evidence",
+  },
+  {
+    title: "Onyx attack surface map",
+    type: "Threat Model Visuals",
+    summary: "Onyx-Based Analysis Evidence: attack surface map for RAG, agents, connectors, and identity paths.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/attack-surface-map.md",
+    hrefLabel: "Open attack surface map",
+    group: "Onyx-Based Analysis Evidence",
+  },
+  {
+    title: "Onyx control matrix",
+    type: "Log Screenshots",
+    summary: "Onyx-Based Analysis Evidence: control matrix linking derived filtering, authorization, policy, and audit controls to runtime boundaries.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/control-matrix.md",
+    hrefLabel: "Open control matrix",
+    group: "Onyx-Based Analysis Evidence",
+  },
+  {
+    title: "Onyx retrofit design",
+    type: "Architecture Diagrams",
+    summary: "Onyx-Based Analysis Evidence: retrofit design showing how derived security controls are inserted without changing the upstream layout.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/retrofit-design.md",
+    hrefLabel: "Open retrofit design",
+    group: "Onyx-Based Analysis Evidence",
   },
 ];
 
@@ -139,6 +181,10 @@ export default function EvidenceGallery() {
                 />
 
                 <p className="text-sm text-site-muted leading-relaxed">{item.summary}</p>
+
+                {item.group ? (
+                  <p className="text-xs uppercase tracking-wide text-site-primary font-semibold">{item.group}</p>
+                ) : null}
 
                 <div className="mt-auto pt-1">
                   {item.href.startsWith("http") ? (

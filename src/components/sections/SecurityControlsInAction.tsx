@@ -43,11 +43,39 @@ const controls: readonly ControlCard[] = [
       "Supports traceability for debugging, incident review, and audit preparation.",
   },
   {
-    title: "Launch gate evaluation",
+    title: "Retrieval filtering (derived)",
     inAction:
-      "Pre-release checkpoints review threat coverage, control evidence, and unresolved risks before go/no-go decisions.",
+      "Derived filtering checks screen retrieved content for trust, source quality, and injection indicators before context assembly.",
     securityOutcome:
-      "Creates a repeatable release-readiness record for technical and compliance review.",
+      "Reduces hostile or low-integrity material crossing into model-visible context.",
+  },
+  {
+    title: "Identity/capability enforcement (derived)",
+    inAction:
+      "Derived principal-aware checks bind runtime actions to authenticated identity and allowed capabilities at each boundary.",
+    securityOutcome:
+      "Prevents identity spoofing and narrows what each actor or agent can do in-session.",
+  },
+  {
+    title: "Tool authorization layer (derived)",
+    inAction:
+      "A derived authorization layer evaluates tool requests against scope, policy, and execution context before side effects occur.",
+    securityOutcome:
+      "Blocks over-broad or unsafe tool execution from agent flows.",
+  },
+  {
+    title: "Policy enforcement layer (derived)",
+    inAction:
+      "Derived policy hooks enforce retrieval, prompt, output, and action rules consistently across runtime stages.",
+    securityOutcome:
+      "Keeps control decisions uniform instead of relying on ad hoc guardrails in isolated components.",
+  },
+  {
+    title: "Telemetry/audit hooks (derived)",
+    inAction:
+      "Derived telemetry hooks emit structured events for prompt decisions, retrieval handling, tool authorization, and output release steps.",
+    securityOutcome:
+      "Improves auditability and incident reconstruction across the full RAG and agent workflow.",
   },
 ];
 
