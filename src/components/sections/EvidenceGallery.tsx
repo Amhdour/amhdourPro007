@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import OptionalArtifactScreenshot from "@/components/sections/OptionalArtifactScreenshot";
 
 type EvidenceType =
   | "Architecture Diagrams"
@@ -132,23 +132,11 @@ export default function EvidenceGallery() {
                   </span>
                 </div>
 
-                <div className="rounded-md border border-site-primary/15 overflow-hidden">
-                  {item.image ? (
-                    <div className="relative aspect-video">
-                      <Image
-                        src={item.image}
-                        alt={`${item.title} preview`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    </div>
-                  ) : (
-                    <div className="aspect-video bg-site-bg/60 flex items-center justify-center text-xs text-site-muted px-4 text-center">
-                      Screenshot/report preview slot
-                    </div>
-                  )}
-                </div>
+                <OptionalArtifactScreenshot
+                  src={item.image}
+                  alt={`${item.title} preview`}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
 
                 <p className="text-sm text-site-muted leading-relaxed">{item.summary}</p>
 

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import OptionalArtifactScreenshot from "@/components/sections/OptionalArtifactScreenshot";
 
 type ImplementationItem = {
   title: string;
@@ -104,23 +104,11 @@ export default function WorkingImplementations() {
                   </a>
                 </div>
 
-                <div className="pt-2">
-                  {item.screenshot ? (
-                    <div className="relative w-full aspect-video rounded-md overflow-hidden border border-site-primary/20">
-                      <Image
-                        src={item.screenshot}
-                        alt={`${item.title} screenshot`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-full aspect-video rounded-md border border-dashed border-site-muted/40 bg-site-bg/60 flex items-center justify-center text-sm text-site-muted">
-                      Optional screenshot slot
-                    </div>
-                  )}
-                </div>
+                <OptionalArtifactScreenshot
+                  src={item.screenshot}
+                  alt={`${item.title} screenshot`}
+                  wrapperClassName="mt-2"
+                />
               </article>
             </ScrollReveal>
           ))}
