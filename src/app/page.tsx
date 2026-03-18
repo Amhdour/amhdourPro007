@@ -24,7 +24,6 @@ export default function Home() {
       <Header />
       <Hero />
       <TrustSignalsEvidence />
-      <About />
       <Portfolio />
       <WorkingImplementations />
       <SecurityControlsInAction />
@@ -38,6 +37,7 @@ export default function Home() {
       <Experiences />
       <Newsletter />
       <Changelog />
+      <About />
       <Contact />
       <Footer />
     </div>
