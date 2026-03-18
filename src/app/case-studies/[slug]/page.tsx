@@ -72,6 +72,60 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ))}
             </ul>
           </section>
+
+          {study.problem && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Problem</h2>
+              <p className="text-site-text/80 leading-relaxed">{study.problem}</p>
+            </section>
+          )}
+
+          {study.implementation && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Implementation</h2>
+              <p className="text-site-text/80 leading-relaxed">{study.implementation}</p>
+            </section>
+          )}
+
+          {study.controls && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Controls</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {study.controls.map((control, i) => (
+                  <li key={i} className="text-site-text/80">{control}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {study.testEvidenceArtifacts && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Test / Evidence Artifacts</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {study.testEvidenceArtifacts.map((artifact, i) => (
+                  <li key={i} className="text-site-text/80">{artifact}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {study.limitations && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Limitations</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                {study.limitations.map((limitation, i) => (
+                  <li key={i} className="text-site-text/80">{limitation}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {study.whyItMatters && (
+            <section className="mb-10">
+              <h2 className="text-xl font-bold text-site-primary mb-3">Why it matters</h2>
+              <p className="text-site-text/80 leading-relaxed">{study.whyItMatters}</p>
+            </section>
+          )}
         </article>
       </main>
       <Footer locale="en" />

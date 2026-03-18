@@ -43,19 +43,34 @@ export const dictionaries = {
         {
           name: "Layer Retrofit",
           image: "/projectimages/screenshot_1.png",
-          description: "A modular security overlay framework for existing RAG pipelines. Layer Retrofit injects trust boundaries, input/output guardrails, and runtime monitors into production AI systems without requiring a full rebuild — retrofitting security where it was never designed in.",
+          description: "Security retrofit pattern for existing RAG pipelines that cannot be rebuilt from scratch.",
+          implemented: "Trust-boundary checkpoints, prompt/input filtering, output validation hooks, and runtime event logging around an existing pipeline.",
+          artifact: "Case-study implementation narrative and launch-gate worksheet references used as review artifacts.",
+          riskAddressed: "Prompt-instruction override, weak boundary enforcement, and low observability during incident review.",
+          evidenceLink: "/case-studies/layer-retrofit",
+          evidenceLabel: "Evidence: Layer Retrofit case study →",
           tags: ["RAG", "Retrofit"],
         },
         {
           name: "Secure Starter Kit",
           image: "/projectimages/screenshot_2.png",
-          description: "A pre-hardened project template for teams building RAG and autonomous agent systems from scratch. Includes prompt injection defenses, retrieval sandboxing, output validation chains, role-based tool access, and structured logging — so security is baked in from day one.",
+          description: "Secure-by-default starter baseline for new RAG and agent projects.",
+          implemented: "Prompt-injection guardrails, retrieval checks, role-scoped tool permissions, output policy checks, and structured telemetry defaults.",
+          artifact: "Starter-kit repository plus implementation guides in the resources and evidence sections.",
+          riskAddressed: "Early-stage security debt, unrestricted tool use, and unsafe output release paths.",
+          evidenceLink: "https://github.com/Amhdour/myStarterKit",
+          evidenceLabel: "Evidence: myStarterKit repository →",
           tags: ["RAG", "Agent", "Starter"],
         },
         {
           name: "Launch Gate",
           image: "/projectimages/screenshot_3.png",
-          description: "A go/no-go checkpoint system for AI deployments. Launch Gate runs a suite of adversarial probes, trust boundary validations, hallucination stress tests, and compliance checks before any AI system is cleared for production. No evidence, no launch.",
+          description: "Pre-release go/no-go evaluation workflow for AI systems moving toward production.",
+          implemented: "Checklist-driven release gate with adversarial test checkpoints, unresolved-risk tracking, and explicit evidence capture fields.",
+          artifact: "Launch Gate worksheet and related evidence-pack references used for review-ready release decisions.",
+          riskAddressed: "Shipping with unresolved critical controls, incomplete validation, or missing audit trail.",
+          evidenceLink: "/resources/launch-gate-worksheet.pdf",
+          evidenceLabel: "Evidence: Launch Gate worksheet →",
           tags: ["Launch", "Compliance"],
         },
         {
@@ -73,7 +88,12 @@ export const dictionaries = {
         {
           name: "rag-security-platform",
           image: "/projectimages/screenshot_4.png",
-          description: "Security-focused RAG reference with practical controls across trust boundaries, retrieval validation, policy guardrails, tool authorization, runtime monitoring, and auditability.",
+          description: "Security reference implementation for RAG with documented control points and review artifacts.",
+          implemented: "Threat-model mapping, control matrix, architecture flow, validation framing, and evidence links for technical review.",
+          artifact: "Public evidence pack page with control matrix and architecture breakdown.",
+          riskAddressed: "Unvalidated retrieval context, unsafe tool pathways, data leakage, and weak auditability.",
+          evidenceLink: "/evidence/rag-security-platform",
+          evidenceLabel: "Evidence: RAG security evidence pack →",
           tags: ["RAG", "Security", "Evidence"],
           directLink: "/evidence/rag-security-platform",
           directLinkLabel: "View Evidence Pack →",
@@ -322,7 +342,7 @@ export const dictionaries = {
         },
         {
           slug: "secure-starter-kit",
-          title: "Secure Starter Kit — Building an Agent System from Scratch",
+          title: "Secure Starter Kit Implementation",
           overview: "A healthcare AI startup needed to build an autonomous agent system for processing medical documents. Security was non-negotiable given HIPAA requirements. We provided the Secure Starter Kit as the project foundation, ensuring security was baked in from the first line of code.",
           approach: [
             "Deployed the Secure Starter Kit template with healthcare-specific security profiles",
@@ -333,15 +353,39 @@ export const dictionaries = {
           ],
           tools: ["TypeScript", "Node.js", "HIPAA Controls", "Agent Sandbox", "Jest", "GitHub Actions"],
           outcomes: [
-            "Passed HIPAA security audit on first submission",
-            "Development velocity increased 40% compared to building security ad-hoc",
-            "Zero security incidents in first 3 months of production",
-            "Agent tool access violations caught and logged automatically",
+            "Security controls were present in the baseline project structure from day one",
+            "Tool access attempts outside policy scope were denied and logged",
+            "Prompt and output checks were testable as part of delivery workflow",
+            "Release review used explicit control and evidence checkpoints",
           ],
+          problem:
+            "Teams often begin building with feature velocity first, then retrofit security late. This creates inconsistent controls and weak audit readiness.",
+          implementation:
+            "The implementation used a pre-hardened baseline with policy hooks in prompt handling, retrieval flow, tool invocation, and output release paths.",
+          controls: [
+            "Prompt-injection filtering at input boundary",
+            "Role-scoped tool authorization rules",
+            "Retrieval context checks before generation",
+            "Output validation prior to response release",
+            "Structured runtime security event logging",
+          ],
+          testEvidenceArtifacts: [
+            "Starter template repository commit history and control modules",
+            "Prompt defense guide and retrieval checklist resources",
+            "Policy-denied tool call log examples",
+            "Release checklist used during final review",
+          ],
+          limitations: [
+            "Reference implementation does not replace domain-specific threat modeling",
+            "Coverage depends on configuration quality and policy maintenance",
+            "Some controls require environment-specific tuning for false positives",
+          ],
+          whyItMatters:
+            "A secure baseline reduces early architectural debt and makes subsequent validation work repeatable rather than ad-hoc.",
         },
         {
           slug: "launch-gate",
-          title: "Launch Gate — Production Readiness for an EU AI Act System",
+          title: "Launch Gate Readiness Workflow",
           overview: "A European enterprise was preparing to launch an AI-powered decision support system subject to EU AI Act high-risk classification. They needed a structured go/no-go framework that would satisfy both internal stakeholders and regulatory requirements.",
           approach: [
             "Implemented the Launch Gate framework with EU AI Act-specific assessment criteria",
@@ -352,11 +396,121 @@ export const dictionaries = {
           ],
           tools: ["Launch Gate CLI", "EU AI Act Framework", "ISO 42001", "Risk Matrix", "Compliance Dashboard"],
           outcomes: [
-            "Achieved EU AI Act compliance certification 3 weeks ahead of deadline",
-            "Generated 200+ pages of automated compliance evidence documentation",
-            "Established a repeatable go/no-go process now used across 4 product teams",
-            "Regulatory audit passed with zero critical findings",
+            "Each release decision included explicit go/no-go criteria and evidence notes",
+            "Risk exceptions were visible before deployment decisions",
+            "Validation artifacts were centralized for reviewer access",
+            "Gate checklist improved consistency across release cycles",
           ],
+          problem:
+            "Teams can ship without clear evidence of control coverage when release decisions rely on informal sign-off.",
+          implementation:
+            "The workflow introduced staged launch checkpoints, artifact capture requirements, and unresolved-risk gates before production approval.",
+          controls: [
+            "Pre-release adversarial test checkpoint",
+            "Control-completeness checklist with ownership fields",
+            "Required evidence links per control area",
+            "Unresolved-risk register tied to release decision",
+            "Final approval record with rationale and timestamp",
+          ],
+          testEvidenceArtifacts: [
+            "Launch Gate worksheet and release checklist exports",
+            "Gate decision notes with unresolved-risk status",
+            "Adversarial probe summary attached to go/no-go review",
+            "Evidence references linked to each control item",
+          ],
+          limitations: [
+            "Checklist quality depends on accurate threat scoping",
+            "Gate process does not eliminate operational risk post-launch",
+            "Evidence review still requires human judgment for edge cases",
+          ],
+          whyItMatters:
+            "A release gate transforms security readiness from informal confidence into a traceable technical decision process.",
+        },
+        {
+          slug: "rag-security-evaluation-pack",
+          title: "RAG Security Evaluation Pack",
+          overview:
+            "A reviewer-focused evaluation pack for RAG security posture, designed to document controls and expose weak points before production rollout.",
+          approach: [
+            "Mapped RAG attack surfaces from ingestion to final response",
+            "Defined control matrix across prompt, retrieval, tool, and output boundaries",
+            "Linked each control area to test/evidence artifacts",
+            "Published a scan-friendly evidence format for reviewers",
+          ],
+          tools: ["Control Matrix", "Threat Model", "Evidence Pack", "RAG Checklist"],
+          outcomes: [
+            "Control coverage could be reviewed from a single evidence page",
+            "Threat scenarios and controls were connected in one model",
+            "Validation expectations were visible before launch decisions",
+            "Evidence links reduced ambiguity during technical review",
+          ],
+          problem:
+            "RAG teams often have fragmented security notes, making it hard to verify what controls exist and whether they were tested.",
+          implementation:
+            "The evaluation pack combined threat model mapping, control definitions, and artifact references into a structured review bundle.",
+          controls: [
+            "Prompt boundary policy checks",
+            "Retrieval integrity and trust checks",
+            "Output policy and leakage screening",
+            "Tool authorization constraints",
+            "Audit-oriented logging requirements",
+          ],
+          testEvidenceArtifacts: [
+            "RAG Security Evidence Pack page",
+            "Control matrix rows mapped to risk areas",
+            "Architecture flow with trust-boundary markers",
+            "Checklist and guidance files in resources",
+          ],
+          limitations: [
+            "Evaluation pack is a framework and requires implementation-specific instrumentation",
+            "Evidence quality depends on freshness of linked artifacts",
+            "Threat coverage must evolve with model and tool changes",
+          ],
+          whyItMatters:
+            "A unified evaluation pack helps reviewers assess security posture quickly without relying on implicit claims.",
+        },
+        {
+          slug: "ai-security-observability-dashboard",
+          title: "AI Security Observability Dashboard",
+          overview:
+            "Dashboard-oriented visibility layer for AI security telemetry, focused on control outcomes and operational traceability.",
+          approach: [
+            "Defined security event taxonomy for prompts, retrieval, tools, and outputs",
+            "Mapped event streams to review dashboards",
+            "Outlined alert conditions for policy denials and anomalies",
+            "Linked dashboard view to evidence and incident workflows",
+          ],
+          tools: ["myStarterKit-maindashb", "Structured Logs", "Policy Events", "Review Dashboards"],
+          outcomes: [
+            "Control outcomes could be inspected without tracing raw logs manually",
+            "Denied actions and filtered outputs were visible in one view",
+            "Security teams had clearer incident triage context",
+            "Reviewers could trace decisions from event to control category",
+          ],
+          problem:
+            "Without observability, control decisions remain opaque and difficult to audit during incidents or external review.",
+          implementation:
+            "The dashboard design aggregates policy and runtime events into a reviewer-friendly operational view with trace context.",
+          controls: [
+            "Event logging schema for control outcomes",
+            "Policy-denial counters and trend views",
+            "Trace IDs for cross-stage investigation",
+            "Alert routing for critical control failures",
+            "Audit snapshots for release reviews",
+          ],
+          testEvidenceArtifacts: [
+            "Dashboard repository with UI and data-flow references",
+            "Screenshot artifacts showing control-event panels",
+            "Sample structured log payloads mapped to dashboard tiles",
+            "Linkage from observability view to launch-gate evidence notes",
+          ],
+          limitations: [
+            "Dashboard quality depends on instrumentation completeness",
+            "Signal noise requires tuning thresholds per environment",
+            "Visualization alone cannot replace control enforcement",
+          ],
+          whyItMatters:
+            "Observability turns security controls from static design claims into inspectable runtime evidence.",
         },
       ],
     },

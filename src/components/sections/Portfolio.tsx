@@ -10,6 +10,11 @@ type Project = {
   name: string;
   image: string;
   description: string;
+  implemented?: string;
+  artifact?: string;
+  riskAddressed?: string;
+  evidenceLink?: string;
+  evidenceLabel?: string;
   tags: readonly string[];
   directLink?: string;
   directLinkLabel?: string;
@@ -43,7 +48,7 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
       </div>
       <div
         className={`collapsible-container flex flex-col gap-2 px-2 bg-site-block overflow-hidden transition-all duration-500 ${
-          expanded ? "max-h-[500px] py-2" : "max-h-0"
+          expanded ? "max-h-[950px] py-2" : "max-h-0"
         }`}
       >
         <h3 className="text-3xl font-semibold">{project.name}</h3>
@@ -54,7 +59,34 @@ function ProjectCard({ project, caseStudyHref, caseStudyLabel }: { project: Proj
             </span>
           ))}
         </div>
-        <p>{project.description}</p>
+        <p className="text-site-muted">{project.description}</p>
+        {project.implemented && (
+          <div>
+            <p className="text-xs uppercase tracking-wide text-site-primary font-semibold">What is implemented</p>
+            <p className="text-sm text-site-muted">{project.implemented}</p>
+          </div>
+        )}
+        {project.artifact && (
+          <div>
+            <p className="text-xs uppercase tracking-wide text-site-primary font-semibold">Proof artifact</p>
+            <p className="text-sm text-site-muted">{project.artifact}</p>
+          </div>
+        )}
+        {project.riskAddressed && (
+          <div>
+            <p className="text-xs uppercase tracking-wide text-site-primary font-semibold">Attack/Risk addressed</p>
+            <p className="text-sm text-site-muted">{project.riskAddressed}</p>
+          </div>
+        )}
+        {project.evidenceLink && (
+          <Link
+            href={project.evidenceLink}
+            onClick={(e) => e.stopPropagation()}
+            className="text-site-primary hover:underline text-sm font-semibold mt-1 inline-block"
+          >
+            {project.evidenceLabel || "Evidence →"}
+          </Link>
+        )}
         {project.directLink && (
           <Link
             href={project.directLink}
