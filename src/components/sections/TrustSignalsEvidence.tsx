@@ -17,6 +17,7 @@ type TrustSignal = {
   type: SignalType;
   inspectable: string;
   href: string;
+  note?: string;
 };
 
 const trustSignals: readonly TrustSignal[] = [
@@ -61,6 +62,13 @@ const trustSignals: readonly TrustSignal[] = [
     type: "Open-source repos",
     inspectable: "Dashboard-oriented observability implementation references.",
     href: "https://github.com/Amhdour/myStarterKit-maindashb",
+  },
+  {
+    label: "Onyx-Based Runtime Analysis",
+    type: "Threat models",
+    inspectable: "Analyzed open-source Onyx platform as reference implementation, reconstructed runtime architecture and trust boundaries, mapped RAG and agent attack surfaces, and derived security retrofit patterns.",
+    href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/architecture-reconstruction.md",
+    note: "Onyx is used as an upstream open-source reference; analysis is independently produced.",
   },
   {
     label: "RAG security evaluation case study",
@@ -111,6 +119,7 @@ export default function TrustSignalsEvidence() {
                   </span>
                 </div>
                 <p className="text-sm text-site-muted">{signal.inspectable}</p>
+                {signal.note ? <p className="text-xs text-site-muted/80 italic">{signal.note}</p> : null}
                 <div className="mt-auto">
                   {signal.href.startsWith("http") ? (
                     <a href={signal.href} target="_blank" rel="noreferrer" className="text-site-primary hover:underline text-sm font-semibold">

@@ -11,6 +11,7 @@ type ImplementationItem = {
   repoLink: string;
   repoLabel: string;
   screenshot?: string;
+  extraLinks?: readonly { label: string; href: string }[];
 };
 
 const implementationItems: readonly ImplementationItem[] = [
@@ -35,6 +36,24 @@ const implementationItems: readonly ImplementationItem[] = [
     evidenceLabel: "Evidence: RAG Security Evidence Pack",
     repoLink: "https://github.com/Amhdour/rag-security-platform",
     repoLabel: "Repository: rag-security-platform",
+    extraLinks: [
+      {
+        label: "Architecture Reconstruction",
+        href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/architecture-reconstruction.md",
+      },
+      {
+        label: "Trust Boundaries",
+        href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/trust-boundaries.md",
+      },
+      {
+        label: "Attack Surfaces",
+        href: "/repo-evidence/rag-security-platform/evidence/onyx-analysis/attack-surface-map.md",
+      },
+      {
+        label: "Comparative Baseline",
+        href: "/repo-evidence/myStarterKit/comparison/onyx-comparative-baseline.md",
+      },
+    ],
   },
   {
     title: "myStarterKit-maindashb screenshots",
@@ -102,6 +121,18 @@ export default function WorkingImplementations() {
                   <a href={item.repoLink} target="_blank" rel="noreferrer" className="text-site-primary hover:underline font-semibold text-sm w-max">
                     {item.repoLabel}
                   </a>
+                  {item.extraLinks ? (
+                    <div className="pt-2">
+                      <p className="text-xs uppercase tracking-wide text-site-primary font-semibold">Additional proof</p>
+                      <div className="mt-2 flex flex-col gap-1.5">
+                        {item.extraLinks.map((link) => (
+                          <Link key={link.href} href={link.href} className="text-site-primary hover:underline text-sm w-max">
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
 
                 <OptionalArtifactScreenshot
