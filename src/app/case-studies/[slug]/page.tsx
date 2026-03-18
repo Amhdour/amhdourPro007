@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { dictionaries } from "@/lib/dictionaries";
+import type { CaseStudy } from "@/lib/dictionaries";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,13 +10,18 @@ interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
 }
 
+function findCaseStudyBySlug(slug: string): CaseStudy | undefined {
+  const studies: readonly CaseStudy[] = dictionaries.en.caseStudies.studies;
+  return studies.find((study) => study.slug === slug);
+}
+
 export function generateStaticParams() {
   return dictionaries.en.caseStudies.studies.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const study = dictionaries.en.caseStudies.studies.find((s) => s.slug === slug);
+  const study = findCaseStudyBySlug(slug);
   if (!study) return { title: "Not Found" };
   return { title: `${study.title} | Ahmed Amhdour`, description: study.overview };
 }
@@ -23,7 +29,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   const t = dictionaries.en.caseStudies;
-  const study = t.studies.find((s) => s.slug === slug);
+  const study = findCaseStudyBySlug(slug);
   if (!study) notFound();
 
   return (
