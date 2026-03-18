@@ -42,15 +42,59 @@ const scenarios: readonly AttackScenario[] = [
       "Tool authorization log captures denied action, principal, required scope, and request trace.",
   },
   {
-    title: "Risky output filtered",
+    title: "Prompt injection → retrieval filtering",
     attackInput:
-      "Generated response contains sensitive fields and non-compliant recommendation text.",
+      "Prompt attempts to steer retrieval toward hostile context and embed instruction overrides in fetched material.",
     beforeHandling:
-      "Unsafe output can reach end users or connected downstream systems.",
+      "Injected instructions can survive retrieval and influence downstream context assembly.",
     afterHandling:
-      "Output validation removes sensitive fields and blocks non-compliant content from release.",
+      "Retrieval filtering removes malicious or low-trust content before it can shape the final prompt.",
     evidenceSignal:
-      "Output filter report captures redaction events, policy category, and final release status.",
+      "Retrieval filter event records blocked chunk IDs, trust score, and injection reason.",
+  },
+  {
+    title: "Connector over-permission → scoped access",
+    attackInput:
+      "A connector request reaches beyond intended datasets or tenant scope because permissions are too broad.",
+    beforeHandling:
+      "Over-permissioned access expands exposure to unrelated or sensitive enterprise content.",
+    afterHandling:
+      "Scoped access rules constrain the connector to approved datasets, actions, and tenant context only.",
+    evidenceSignal:
+      "Connector authorization trace logs denied scope escalation and approved access boundary.",
+  },
+  {
+    title: "Tool misuse → authorization middleware",
+    attackInput:
+      "An agent attempts a tool action that is valid syntactically but unauthorized for the active identity and task.",
+    beforeHandling:
+      "The runtime may execute a high-impact action without verifying whether the caller is allowed to perform it.",
+    afterHandling:
+      "Authorization middleware intercepts the request, evaluates policy, and denies unsafe execution.",
+    evidenceSignal:
+      "Middleware audit entry captures requested tool, identity, capability check, and denial outcome.",
+  },
+  {
+    title: "Cross-tenant leakage → isolation",
+    attackInput:
+      "Context retrieval or shared memory returns records associated with a different tenant session.",
+    beforeHandling:
+      "Responses can leak data across organizational boundaries during retrieval or generation.",
+    afterHandling:
+      "Tenant isolation controls restrict retrieval, memory, and output paths to the current security boundary only.",
+    evidenceSignal:
+      "Isolation monitor stores tenant mismatch alerts and blocked object references.",
+  },
+  {
+    title: "Identity spoofing → identity enforcement",
+    attackInput:
+      "Runtime requests carry forged or weakly bound identity metadata to gain unauthorized capabilities.",
+    beforeHandling:
+      "Spoofed principals can inherit elevated tool or connector permissions if identity checks are weak.",
+    afterHandling:
+      "Identity enforcement validates principal context before retrieval, tool use, and policy evaluation proceed.",
+    evidenceSignal:
+      "Identity verification log records principal binding status, failed checks, and enforcement decisions.",
   },
 ];
 
