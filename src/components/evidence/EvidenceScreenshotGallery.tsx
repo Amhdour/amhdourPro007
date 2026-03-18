@@ -55,7 +55,7 @@ export default function EvidenceScreenshotGallery({
               </button>
             </div>
             <div className="bg-site-bg/70">
-              {active.imageSrc ? (
+              {active.imageSrc && (
                 <div className="relative w-full aspect-video">
                   <Image
                     src={active.imageSrc}
@@ -64,10 +64,6 @@ export default function EvidenceScreenshotGallery({
                     className="object-contain"
                     sizes="100vw"
                   />
-                </div>
-              ) : (
-                <div className="w-full aspect-video flex items-center justify-center text-site-muted text-sm">
-                  Screenshot not added yet for this card.
                 </div>
               )}
             </div>

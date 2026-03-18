@@ -33,13 +33,13 @@ export default function EvidenceScreenshotCard({
         </span>
       </div>
 
-      <button
-        type="button"
-        onClick={() => onOpen?.(item)}
-        className="rounded-md border border-site-primary/15 overflow-hidden text-left"
-        aria-label={`Open screenshot preview for ${item.title}`}
-      >
-        {hasUsableImage ? (
+      {hasUsableImage && (
+        <button
+          type="button"
+          onClick={() => onOpen?.(item)}
+          className="rounded-md border border-site-primary/15 overflow-hidden text-left"
+          aria-label={`Open screenshot preview for ${item.title}`}
+        >
           <div className="relative aspect-video w-full">
             <Image
               src={item.imageSrc!}
@@ -50,12 +50,8 @@ export default function EvidenceScreenshotCard({
               onError={() => setImageLoadFailed(true)}
             />
           </div>
-        ) : (
-          <div className="aspect-video w-full bg-site-bg/60 flex items-center justify-center px-4 text-center text-xs text-site-muted">
-            Screenshot slot ready (add image to enable preview)
-          </div>
-        )}
-      </button>
+        </button>
+      )}
 
       <p className="text-sm text-site-muted leading-relaxed">{item.caption}</p>
 
