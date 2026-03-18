@@ -1,3 +1,18 @@
+export interface CaseStudy {
+  slug: string;
+  title: string;
+  overview: string;
+  approach: readonly string[];
+  tools: readonly string[];
+  outcomes: readonly string[];
+  problem?: string;
+  implementation?: string;
+  controls?: readonly string[];
+  testEvidenceArtifacts?: readonly string[];
+  limitations?: readonly string[];
+  whyItMatters?: string;
+}
+
 export const dictionaries = {
   en: {
     dir: "ltr" as const,
@@ -1914,3 +1929,11 @@ export const dictionaries = {
 } as const;
 
 export type Dictionary = typeof dictionaries.en;
+
+// Compile-time guards to keep locale case-studies aligned with the shared shape.
+export const caseStudyTypeGuards: Record<string, readonly CaseStudy[]> = {
+  en: dictionaries.en.caseStudies.studies,
+  ar: dictionaries.ar.caseStudies.studies,
+  fr: dictionaries.fr.caseStudies.studies,
+  de: dictionaries.de.caseStudies.studies,
+};
