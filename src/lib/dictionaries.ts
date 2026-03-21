@@ -51,6 +51,7 @@ export const dictionaries = {
     portfolio: {
       sectionTitle: "Portfolio",
       heading: "Purpose-built tools for AI Trust & Security Readiness",
+      narrative: "Together, myStarterKit, rag-security-platform, and myStarterKit-maindashb form an AI Trust & Security Readiness framework: the starter kit enforces security controls and emits evidence, the evaluation platform runs adversarial tests, normalizes artifacts, and issues launch-gate verdicts, the dashboard gives read-only visibility into logs, evals, and readiness reports, and this website surfaces the high-level insights and case-study results. In simulated deployments across multiple domains, the framework has reduced prompt-injection success from 34% to less than 2% while making release decisions traceable and review-ready.",
       filterAll: "All",
       viewCaseStudy: "View Case Study →",
       viewEvidencePack: "View Evidence Pack →",

@@ -145,6 +145,9 @@ export default function Portfolio({ locale = "en" }: { locale?: "en" | "ar" | "f
             <h3 className="text-2xl font-bold mx-auto pb-2 text-center">
               {t.heading}
             </h3>
+            {"narrative" in t && (t as { narrative?: string }).narrative && (
+              <p className="max-w-4xl mx-auto text-center text-site-muted">{(t as { narrative?: string }).narrative}</p>
+            )}
             <Link
               href="/evidence/rag-security-platform"
               className="block w-max mx-auto mt-3 text-sm font-semibold text-site-primary hover:underline"
